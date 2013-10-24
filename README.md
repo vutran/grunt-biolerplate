@@ -10,9 +10,9 @@ Upon building with `grunt`, the `build` directory will be compiled into the `ass
 
 `npm install -g grunt-cli`
 
-# Install Development Dependencies
+# Install Dependencies
 
-`npm install --save-dev`
+`npm install`
 
 ## Build Manually
 

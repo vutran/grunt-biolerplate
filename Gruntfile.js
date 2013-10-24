@@ -6,17 +6,13 @@ module.exports = function(grunt) {
     pkg : grunt.file.readJSON('package.json'),
 
     /**
-     * Uglifies the /build/js/ folder and outputs the files to /assets/ directory
+     * Clean folders
      *
-     * @task uglify
+     * @task clean
      */
-    uglify : {
+    clean : {
       build : {
-        expand : true,
-        cwd : 'build/js/',
-        src : ['*.js'],
-        dest : 'assets/js/',
-        ext : '.min.js'
+        src : ['assets/css/', 'assets/images/', 'assets/js/']
       }
     },
 
@@ -53,6 +49,21 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Uglifies the /build/js/ folder and outputs the files to /assets/ directory
+     *
+     * @task uglify
+     */
+    uglify : {
+      build : {
+        expand : true,
+        cwd : 'build/js/',
+        src : ['*.js'],
+        dest : 'assets/js/',
+        ext : '.min.js'
+      }
+    },
+
+    /**
      * Watch for files and build
      *
      * @task watch
@@ -67,12 +78,13 @@ module.exports = function(grunt) {
   });
 
   // Load plugins
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register the default task
-  grunt.registerTask('default', ['uglify', 'copy', 'stylus']);
+  grunt.registerTask('default', ['clean', 'copy', 'uglify', 'stylus']);
 
 };
