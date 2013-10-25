@@ -17,21 +17,21 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Copies files from /build/ to the /assets/ directory
+     * Copies files from /src/ to the /assets/ directory
      *
      * @task copy
      */
     copy : {
       build : {
         expand : true,
-        cwd : 'build/images/',
+        cwd : 'src/images/',
         src : '*',
         dest : 'assets/images/'
       }
     },
 
     /**
-     * Compiles the /build/styl/ directory with Stylus to the /assets/css/ directory
+     * Compiles the /src/styl/ directory with Stylus to the /assets/css/ directory
      *
      * @task stylus
      */
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       },
       build : {
         expand : true,
-        cwd : 'build/styl/',
+        cwd : 'src/styl/',
         src : '*.styl',
         dest : 'assets/css/',
         ext : '.min.css'
@@ -49,14 +49,14 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Uglifies the /build/js/ folder and outputs the files to /assets/ directory
+     * Uglifies the /src/js/ folder and outputs the files to /assets/ directory
      *
      * @task uglify
      */
     uglify : {
       build : {
         expand : true,
-        cwd : 'build/js/',
+        cwd : 'src/js/',
         src : ['*.js'],
         dest : 'assets/js/',
         ext : '.min.js'
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
      */
     watch : {
       src : {
-        files : ['build/js/*.js', 'build/styl/*.styl'],
+        files : ['src/js/*.js', 'src/styl/*.styl'],
         tasks : ['default']
       }
     }
