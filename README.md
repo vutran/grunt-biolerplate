@@ -1,8 +1,8 @@
-# Build Directories
+# Source Directories
 
-All working Stylus, JavaScript, and Image assets should be added to the `build` directory.
+All working Stylus, JavaScript, and Image assets should be added to the `src` directory.
 
-Upon building with `grunt`, the `build` directory will be compiled into the `assets` folder.
+Upon building with `grunt`, the `src` directory will be compiled into the `assets` folder.
 
 # Building Assets with Grunt.js
 
