@@ -17,16 +17,18 @@ module.exports = function(grunt) {
     },
 
     /**
-     * Copies files from /src/ to the /assets/ directory
+     * Minifies image files form the /build/ to the /assets/ directory
      *
-     * @task copy
+     * @task imagemin
      */
-    copy : {
-      build : {
-        expand : true,
-        cwd : 'src/images/',
-        src : '*',
-        dest : 'assets/images/'
+    imagemin : {
+      dynamic : {
+        files : [{
+          expand : true,
+          cwd : 'build/images/',
+          src : ['**/*.{png,jpg,gif}'],
+          dest : 'assets/images/'
+        }]
       }
     },
 
@@ -79,12 +81,12 @@ module.exports = function(grunt) {
 
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register the default task
-  grunt.registerTask('default', ['clean', 'copy', 'uglify', 'stylus']);
+  grunt.registerTask('default', ['clean', 'imagemin', 'uglify', 'stylus']);
 
 };
