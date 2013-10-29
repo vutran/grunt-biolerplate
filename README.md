@@ -24,6 +24,10 @@ To make it easier, you can watch for changes by running `grunt watch`. This will
 
 # Changelog
 
+## 0.2.1
+* Fixed watch task with correct paths
+* Added MIT license
+
 ## 0.2.0
 * Added new configurable CSS preprocessor: SASS
 * Minor refactoring
