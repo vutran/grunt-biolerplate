@@ -111,7 +111,7 @@ module.exports = function(grunt) {
      */
     watch : {
       src : {
-        files : ['<%= srcPath %>/js/**/*.js', '<%= srcPath %>/styl/**/*.styl'],
+        files : ['<%= srcPath %>/js/**/*.js', '<%= srcPath %>/stylesheets/**/*.{styl,sass,scss}'],
         tasks : ['default']
       }
     }
