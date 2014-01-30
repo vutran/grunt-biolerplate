@@ -20,6 +20,13 @@ module.exports = function(grunt) {
     assetsPath : 'assets/',
 
     /**
+     * The path to bower
+     *
+     * @var string
+     */
+    bowerPath : 'bower_components/',
+
+    /**
      * Choose the CSS preprocessor (stylus, sass, scss)
      *
      * @var string
@@ -33,7 +40,7 @@ module.exports = function(grunt) {
      */
     clean : {
       build : {
-        src : ['<%= assetsPath %>/css/', '<%= assetsPath %>/images/', '<%= assetsPath %>/js/']
+        src : ['<%= assetsPath %>/components/', '<%= assetsPath %>/css/', '<%= assetsPath %>/images/', '<%= assetsPath %>/js/']
       }
     },
 
@@ -78,7 +85,8 @@ module.exports = function(grunt) {
      */
     sass : {
       options : {
-        style : 'compressed'
+        style : 'compressed',
+        compass : true
       },
       build : {
         expand : true,
@@ -86,6 +94,46 @@ module.exports = function(grunt) {
         src : '**/*.{sass,scss}',
         dest : '<%= assetsPath %>/css/',
         ext : '.min.css'
+      }
+    },
+
+    /**
+     * Runs the JS through JSHint
+     *
+     * @task jshint
+     */
+    jshint : {
+      options : {
+        force : true
+      },
+      build : {
+        expand : true,
+        cwd : '<%= srcPath %>/js/',
+        src : ['**/*.js'],
+        dest : '<%= assetsPath %>/js/',
+        ext : '.js'
+      }
+    },
+
+    /**
+     * Copies JS files from source path to the assets path
+     *
+     * @task copy
+     */
+    copy : {
+      build : {
+        expand : true,
+        cwd : '<%= srcPath %>/js/',
+        src : ['**/*.js'],
+        dest : '<%= assetsPath %>/js/',
+        ext : '.min.js'
+      },
+      bower : {
+        expand : true,
+        cwd : '<%= bowerPath %>/',
+        src : ['**/*.js'],
+        dest : '<%= assetsPath %>/components/',
+        ext : '.min.js'
       }
     },
 
@@ -98,8 +146,15 @@ module.exports = function(grunt) {
       build : {
         expand : true,
         cwd : '<%= srcPath %>/js/',
-        src : ['*.js'],
+        src : ['**/*.js'],
         dest : '<%= assetsPath %>/js/',
+        ext : '.min.js'
+      },
+      bower : {
+        expand : true,
+        cwd : '<%= bowerPath %>/',
+        src : ['**/*.js'],
+        dest : '<%= assetsPath %>/components/',
         ext : '.min.js'
       }
     },
@@ -112,7 +167,7 @@ module.exports = function(grunt) {
     watch : {
       src : {
         files : ['<%= srcPath %>/js/**/*.js', '<%= srcPath %>/stylesheets/**/*.{styl,sass,scss}'],
-        tasks : ['default']
+        tasks : ['build']
       }
     }
 
@@ -120,7 +175,9 @@ module.exports = function(grunt) {
 
   // Load plugins
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -140,6 +197,7 @@ module.exports = function(grunt) {
   }
 
   // Register the default task
-  grunt.registerTask('default', ['clean', 'imagemin', 'uglify', cssPreprocessor]);
+  grunt.registerTask('default', ['clean', 'imagemin', 'copy', cssPreprocessor]);
+  grunt.registerTask('build', ['clean', 'imagemin', 'uglify', cssPreprocessor]);
 
 };
