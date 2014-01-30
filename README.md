@@ -39,14 +39,14 @@ To make it easier, you can watch for changes by running `grunt watch`. This will
 
 # Bower Support
 
-Please refer to the [http://bower.io/](Bower) documentation for general usage.
+Please refer to the [Bower](http://bower.io/) documentation for general usage.
 
 Compiled assets will be copied into `assets/components/` in their respective vendor directories.
 
 # Changelog
 
 ## 0.2.2
-* Added support for [http://bower.io](Bower)
+* Added support for [Bower](http://bower.io)
 * Added Compass support for `grunt-contrib-sass`
 * Updated watch task
 * New `grunt build` task
