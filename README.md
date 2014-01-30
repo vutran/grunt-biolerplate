@@ -4,6 +4,21 @@ All working Stylus, JavaScript, and Image assets should be added to the `src` di
 
 Upon building with `grunt`, the `src` directory will be compiled into the `assets` folder.
 
+	<PROJECT_ROOT>
+    	assets/
+            components/
+        	css/
+        	images/
+        	js/
+		bower_components/
+        node_modules/
+        src/
+            images/
+            js/
+            stylesheets/
+		Gruntfile.js
+		package.json
+
 # Building Assets with Grunt.js
 
 ## Install Grunt.js
@@ -22,7 +37,19 @@ Switch to the working directory and run `grunt` via the command line.
 
 To make it easier, you can watch for changes by running `grunt watch`. This will rebuild the `assets` directory whenever a file is added, changed, or deleted.
 
+# Bower Support
+
+Please refer to the [http://bower.io/](Bower) documentation for general usage.
+
+Compiled assets will be copied into `assets/components/` in their respective vendor directories.
+
 # Changelog
+
+## 0.2.2
+* Added support for [http://bower.io](Bower)
+* Added Compass support for `grunt-contrib-sass`
+* Updated watch task
+* New `grunt build` task
 
 ## 0.2.1
 * Fixed watch task with correct paths
