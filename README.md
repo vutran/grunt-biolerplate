@@ -11,11 +11,13 @@ Upon building with `grunt`, the `src` directory will be compiled into the `asset
         	images/
         	js/
 		bower_components/
+        grunt/
         node_modules/
         src/
             images/
             js/
             stylesheets/
+        Gruntbuild.js
 		Gruntfile.js
 		package.json
 
@@ -44,6 +46,10 @@ Please refer to the [Bower](http://bower.io/) documentation for general usage.
 Compiled assets will be copied into `assets/components/` in their respective vendor directories.
 
 # Changelog
+
+## 0.3
+* Extracted task configurations into external files with `load-grunt-config`
+* Added new CSS engine: LESS (`grunt-contrib-less`).
 
 ## 0.2.2
 * Added support for [Bower](http://bower.io)
