@@ -1,12 +1,15 @@
 module.exports = function(grunt) {
 
-  // Load the build cunfiguration
-  var buildCfg = require('./Gruntbuild.js');
+    // Time it!
+    require('time-grunt')(grunt);
 
-  // Load grunt tasks and configs
-  require("load-grunt-config")(grunt);
+    // Load the build cunfiguration
+    var buildCfg = require('./Gruntbuild.js');
 
-  // Set the build configurations
-  grunt.config.set("buildCfg", buildCfg);
+    // Load grunt tasks and configs
+    require("load-grunt-config")(grunt);
+
+    // Set the build configurations
+    grunt.config.set("buildCfg", buildCfg);
 
 };

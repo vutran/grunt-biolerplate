@@ -23,5 +23,8 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-cssmin": "~0.7.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "time-grunt": "~0.2.9"
+  }
 }
