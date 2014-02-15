@@ -53,7 +53,9 @@ Compiled assets will be copied into `assets/components/` in their respective ven
 
 ## 0.3
 * Extracted task configurations into external files with `load-grunt-config`
-* Added new CSS engine: LESS (`grunt-contrib-less`).
+* Added new CSS engine: LESS (`grunt-contrib-less`)
+* Added `time-grunt`
+* `grunt build` compress all files mapped from the `src` to `assets` directory and a combined version in a subdirectory.
 
 ## 0.2.2
 * Added support for [Bower](http://bower.io)
