@@ -1,3 +1,7 @@
+# Grunt Boilerplate
+
+[![Build Status](https://travis-ci.org/vutran/grunt-boilerplate.png?branch=develop)](https://travis-ci.org/vutran/grunt-boilerplate)
+
 # Source Directories
 
 All working Stylus, JavaScript, and Image assets should be added to the `src` directory.

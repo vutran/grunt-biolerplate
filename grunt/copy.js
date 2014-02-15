@@ -5,7 +5,7 @@ module.exports = {
         cwd : '<%= buildCfg.bowerPath %>/',
         src : ['**/*.js'],
         dest : '<%= buildCfg.assetsPath %>/components/',
-        ext : '.min.js'
+        ext : '.js'
     },
 
     js : {
@@ -13,7 +13,7 @@ module.exports = {
         cwd : '<%= buildCfg.srcPath %>/js/',
         src : ['**/*.js'],
         dest : '<%= buildCfg.assetsPath %>/js/',
-        ext : '.min.js'
+        ext : '.js'
     }
 
 };

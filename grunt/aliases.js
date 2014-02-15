@@ -26,16 +26,20 @@ module.exports = {
         // Optimize images
         "imagemin",
 
-        // CSS
-        "sass",
-        "stylus",
-        "less",
+        // Compile all files
+        "sass:compressed",
+        "stylus:compressed",
+        "less:compressed",
+        // Minify and combine
+        "cssmin",
 
         // Bower
         "uglify:bower",
 
         // Compile JavaScript
-        "uglify:js"
+        "uglify:js",
+        // Combine CSS files
+        "concat:js"
     ]
 
 };

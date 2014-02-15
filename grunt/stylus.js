@@ -1,9 +1,21 @@
 module.exports = {
 
     options : {
-        compress : true
+        compress : false
     },
+
     default : {
+        expand : true,
+        cwd : '<%= buildCfg.srcPath %>/stylesheets/',
+        src : '**/*.styl',
+        dest : '<%= buildCfg.assetsPath %>/css/',
+        ext : '.css'
+    },
+
+    compressed : {
+        options : {
+            compress : true
+        },
         expand : true,
         cwd : '<%= buildCfg.srcPath %>/stylesheets/',
         src : '**/*.styl',
