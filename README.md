@@ -1,6 +1,6 @@
 # Grunt Boilerplate
 
-[![Build Status](https://travis-ci.org/vutran/grunt-boilerplate.png?branch=develop)](https://travis-ci.org/vutran/grunt-boilerplate)
+[![Build Status](https://travis-ci.org/vutran/grunt-boilerplate.png?branch=master)](https://travis-ci.org/vutran/grunt-boilerplate)
 
 # Source Directories
 
