@@ -1,5 +1,7 @@
 module.exports = {
 
+    main : "app",
+
     srcPath : "src/",
 
     assetsPath : "assets/",

@@ -1,21 +1,21 @@
 module.exports = {
 
     "default" : [
-        // Clear images
+        // Clear assets
         "clean",
 
         // Optimize images
         "imagemin",
 
-        // CSS
+        // Compile stylesheets
         "sass",
         "stylus",
         "less",
 
-        // Bower
-        "copy:bower",
+        // Install Bower dependencies
+        "bower:install",
 
-        // Copy JavaScript
+        // Copy Javascript files
         "copy:js"
     ],
 
@@ -26,19 +26,19 @@ module.exports = {
         // Optimize images
         "imagemin",
 
-        // Compile all files
+        // Compile stylesheets
         "sass:compressed",
         "stylus:compressed",
         "less:compressed",
-        // Minify and combine
+        // Minify and concat stylesheets
         "cssmin",
 
-        // Bower
-        "uglify:bower",
+        // Install Bower dependencies
+        "bower:install",
 
-        // Compile JavaScript
+        // Compile Javascript
         "uglify:js",
-        // Combine CSS files
+        // Concat Javascript files
         "concat:js"
     ]
 

@@ -3,6 +3,7 @@ module.exports = {
     options : {
         force : true
     },
+
     default : {
         expand : true,
         cwd : '<%= buildCfg.srcPath %>/js/',
