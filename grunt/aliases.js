@@ -40,6 +40,48 @@ module.exports = {
         "uglify:js",
         // Concat Javascript files
         "concat:js"
+    ],
+
+    "default:requirejs" : [
+        // Clean assets
+        "clean",
+
+        // Optimize images
+        "imagemin",
+
+        // Compile stylesheets
+        "sass:compressed",
+        "stylus:compressed",
+        "less:compressed",
+        // Minify and concat stylesheets
+        "cssmin",
+
+        // Install Bower dependencies
+        "bower:install",
+
+        // Compile Javascript
+        "requirejs:default"
+    ],
+
+    "build:requirejs" : [
+        // Clean assets
+        "clean",
+
+        // Optimize images
+        "imagemin",
+
+        // Compile stylesheets
+        "sass:compressed",
+        "stylus:compressed",
+        "less:compressed",
+        // Minify and concat stylesheets
+        "cssmin",
+
+        // Install Bower dependencies
+        "bower:install",
+
+        // Compile Javascript
+        "requirejs:build"
     ]
 
 };

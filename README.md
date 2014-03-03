@@ -4,16 +4,16 @@
 
 # Source Directories
 
-All working Stylus, JavaScript, and Image assets should be added to the `src` directory.
+All working stylesheets, scripts, and image assets should be added to the `src` directory.
 
 Upon building with `grunt`, the `src` directory will be compiled into the `assets` folder.
 
 	<PROJECT_ROOT>
     	assets/
-            components/
         	css/
         	images/
         	js/
+            vendor/
 		bower_components/
         grunt/
         node_modules/
@@ -29,27 +29,74 @@ Upon building with `grunt`, the `src` directory will be compiled into the `asset
 
 ## Install Grunt.js
 
+You need to install grunt.
+
 `npm install -g grunt-cli`
 
 # Install Dependencies
 
+After grunt is installed, install local dependencies.
+
 `npm install`
 
-## Build Manually
+## Compile Manually
 
 Switch to the working directory and run `grunt` via the command line.
+
+### Basic Compilation
+
+**Development build:**
+
+`grunt default`
+
+**Production build:**
+
+`grunt build`
+
+### RequireJS Compilation
+
+**Development build:**
+
+`grunt default:requirejs`
+
+**Production build:**
+
+`grunt build:requirejs`
 
 ## Watch for files
 
 To make it easier, you can watch for changes by running `grunt watch`. This will rebuild the `assets` directory whenever a file is added, changed, or deleted.
 
+### Basic Watch
+
+**Development build:**
+
+`grunt watch`
+
+**Production build:**
+
+`grunt watch:build`
+
+# RequireJS Support
+
+Please refer to the [RequireJS](http://requirejs.org) documentation for general usage and information.
+
+## Compiling with Almond.js
+
+To use RequireJs, you must have an [almond.js](https://github.com/jrburke/almond) file in your `src/js/` directory. Please refer to the documentation for extended configuration.
+
 # Bower Support
 
-Please refer to the [Bower](http://bower.io/) documentation for general usage.
+Please refer to the [Bower](http://bower.io/) documentation for general usage and information.
 
-Compiled assets will be copied into `assets/components/` in their respective vendor directories.
+Compiled assets will be copied into `assets/components/` in their respective vendor directories by default.
+
+You can change the bower components directory in the `Gruntbuild.js` file if necessary.
 
 # Changelog
+
+## 0.3.1
+* Added support for RequireJS with almond.js for AMD loading.
 
 ## 0.3
 * Extracted task configurations into external files with `load-grunt-config`
