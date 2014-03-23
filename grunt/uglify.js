@@ -1,5 +1,9 @@
 module.exports = {
 
+    options : {
+        mangle : true
+    },
+
     js : {
         expand : true,
         cwd : '<%= buildCfg.srcPath %>/js/',
